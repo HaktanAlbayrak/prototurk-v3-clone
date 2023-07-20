@@ -9,3 +9,11 @@
     Roboto, 'Helvetica Neue', Arial, sans-serif;
   @apply antialiased;
 }
+
+body {
+  @apply bg-white transition-colors;
+}
+
+body.dark {
+  @apply bg-zinc-900;
+}

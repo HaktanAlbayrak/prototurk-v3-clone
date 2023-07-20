@@ -7,20 +7,25 @@ export default function Button({ children, as, variant, size, ...props }) {
     as,
     {
       ...props,
-      className: classNames('h-10 flex items-center justify-center rounded', {
-        'bg-primary text-white font-medium': variant === 'primary',
-        'px-5': size === 'normal',
-      }),
+      className: classNames(
+        'h-10 flex items-center transition-colors justify-center rounded',
+        {
+          'bg-primary dark:bg-blue-500 text-white': variant === 'primary',
+          'bg-white text-primary': variant === 'light',
+          'bg-zinc-200 text-primary': variant === 'gray',
+          'px-5 font-medium': size === 'normal',
+        }
+      ),
     },
     children
   );
 }
 
 Button.propTypes = {
-  children: PropTypes.element,
-  variant: PropTypes.oneOf(['primary', 'light']),
+  children: PropTypes.oneOfType([PropTypes.element, PropTypes.string]),
+  variant: PropTypes.oneOf(['primary', 'light', 'gray']),
   size: PropTypes.oneOf(['normal', 'small', 'large']),
-  as: PropTypes.string,
+  as: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
   props: PropTypes.object,
 };
 
