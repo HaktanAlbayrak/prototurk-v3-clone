@@ -26,7 +26,7 @@ export default function Apperance() {
           </span>
           {t(getApperanceName(theme))}
         </Menu.Button>
-        <Menu.Items className='absolute bottom-full left-0 w-[234px] bg-white border border-zinc-300 rounded grid -translate-y-1 dark:bg-zinc-800 dark:text-white dark:border-zinc-700'>
+        <Menu.Items className='absolute bottom-full left-0 w-[234px] bg-white border border-zinc-300 rounded overflow-hidden grid -translate-y-1 dark:bg-zinc-800 dark:text-white dark:border-zinc-700'>
           {apperance.map(({ key, value }, index) => (
             <Menu.Item key={index}>
               {({ active }) => (
@@ -69,7 +69,7 @@ export default function Apperance() {
           />
           {i18n.language.toUpperCase()}
         </Menu.Button>
-        <Menu.Items className='absolute bottom-full right-0 w-[234px] bg-white border border-zinc-300 rounded grid -translate-y-1 dark:bg-zinc-800 dark:text-white dark:border-zinc-700'>
+        <Menu.Items className='absolute bottom-full right-0 w-[234px] bg-white border border-zinc-300 rounded overflow-hidden grid -translate-y-1 dark:bg-zinc-800 dark:text-white dark:border-zinc-700'>
           {languages.map(({ key, value }, index) => (
             <Menu.Item key={index}>
               {({ active }) => (
