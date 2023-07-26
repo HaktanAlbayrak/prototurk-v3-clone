@@ -75,7 +75,7 @@ export const PROFILE_SIDEBAR_MENU = [
     title: 'Herkese Açık Profilin',
   },
   {
-    onclick: () => console.log('logout butonuna basıldı.'),
+    onClick: () => console.log('logout butonuna basıldı.'),
     sensitive: true,
     title: 'Çıkış Yap',
   },

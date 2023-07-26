@@ -21,7 +21,7 @@ export default function WebLayout() {
     <>
       <Header />
       <Sidebar />
-      <main className='p-6 flex-1 ml-[250px]'>
+      <main className='p-6 mt-14 flex-1 ml-[250px]'>
         <Outlet />
       </main>
     </>
