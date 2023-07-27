@@ -15,11 +15,11 @@ export default function MenuItem({ item }) {
       }}
       className={({ isActive }) =>
         classNames(
-          'px-3 h-9 flex items-center hover:bg-zinc-50 transition-colors rounded text-15  font-medium',
+          'px-3 h-9 flex items-center hover:bg-zinc-50 dark:hover:bg-zinc-800 transition-colors rounded text-15  font-medium',
           {
-            '!text-zinc-800 dark:text-zinc-400': !isActive,
+            'text-zinc-800 dark:text-zinc-400': !isActive,
             'text-red-600': item?.sensitive,
-            'bg-zinc-100 text-primary dark:bg-blue-500/20 dark:text-white':
+            '!bg-zinc-100 text-primary dark:!bg-blue-500/20 dark:text-white':
               isActive && item?.path,
           }
         )

@@ -15,7 +15,7 @@ export default function Button({
     {
       ...props,
       className: classNames(
-        'flex items-center transition-colors justify-center rounded',
+        'inline-flex items-center transition-colors justify-center rounded',
         {
           'bg-primary dark:bg-blue-500 text-white': variant === 'primary',
           'bg-white text-primary': variant === 'light',
