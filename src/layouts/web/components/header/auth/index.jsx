@@ -1,9 +1,17 @@
 import Button from '~/components/button';
+import { modal } from '~/stores/modal/action';
 
 export default function Auth() {
   return (
     <div>
-      <Button type='button'>Giriş yap</Button>
+      <Button
+        onClick={() =>
+          modal.append('auth.login', { name: 'haktan', surname: 'albayrak' })
+        }
+        type='button'
+      >
+        Giriş yap
+      </Button>
     </div>
   );
 }

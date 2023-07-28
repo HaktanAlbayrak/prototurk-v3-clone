@@ -4,8 +4,11 @@ import Sidebar from './components/sidebar';
 import { useTheme } from '~/stores/app/hooks';
 import useColorScheme from '~/hooks/use-color-scheme';
 import { useEffect } from 'react';
+import { useModals } from '~/stores/modal/hooks';
+import Modals from '~/modals';
 
 export default function WebLayout() {
+  const modals = useModals();
   const theme = useTheme();
   const { colorScheme } = useColorScheme();
 
@@ -17,8 +20,11 @@ export default function WebLayout() {
     }
   }, [theme, colorScheme]);
 
+  console.log('modals', modals);
+
   return (
     <>
+      {modals.length > 0 && <Modals />}
       <Header />
       <Sidebar />
       <main className='p-6 mt-14 flex-1 ml-[250px] dark:text-white'>
