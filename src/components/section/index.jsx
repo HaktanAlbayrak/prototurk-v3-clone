@@ -18,5 +18,5 @@ export default function Section({ title, description, children }) {
 Section.propTypes = {
   title: PropTypes.string.isRequired,
   description: PropTypes.string,
-  children: PropTypes.oneOfType([PropTypes.element, PropTypes.string]),
+  children: PropTypes.any,
 };

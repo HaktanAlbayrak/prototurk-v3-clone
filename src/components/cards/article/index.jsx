@@ -2,12 +2,19 @@ import { Link } from 'react-router-dom';
 import { timeAgo } from '~/utils/date';
 import { getContrastColor } from '~/utils/helpers';
 import PropTypes from 'prop-types';
+import classNames from 'classnames';
 
-export default function ArticleCard({ item }) {
+export default function ArticleCard({ item, style }) {
   return (
     <Link
       to={`/makaleler/${item.slug}`}
-      className='bg-white dark:bg-zinc-900 dark:border-zinc-700 p-5 border hover:border-zinc-300 dark:hover:border-zinc-600 rounded-md flex flex-col relative  before:w-[90%] before:h-full before:rounded-b before:absolute before:-bottom-1.5 before:left-1/2 before:-translate-x-1/2 before:bg-zinc-200/80 dark:before:bg-zinc-700 before:z-[-1]'
+      className={classNames(
+        'bg-white dark:bg-zinc-900 dark:border-zinc-700 p-5 border hover:border-zinc-300 dark:hover:border-zinc-600 rounded-md flex flex-col relative',
+        {
+          'before:w-[90%] before:h-full before:rounded-b before:absolute before:-bottom-1.5 before:left-1/2 before:-translate-x-1/2 before:bg-zinc-200/80 dark:before:bg-zinc-700 before:z-[-1]':
+            style,
+        }
+      )}
     >
       <div
         style={{
@@ -36,6 +43,7 @@ export default function ArticleCard({ item }) {
 }
 
 ArticleCard.propTypes = {
+  style: PropTypes.bool,
   item: PropTypes.shape({
     slug: PropTypes.string.isRequired,
     category: PropTypes.shape({
@@ -49,4 +57,8 @@ ArticleCard.propTypes = {
       avatar: PropTypes.string.isRequired,
     }),
   }),
+};
+
+ArticleCard.defaultProps = {
+  style: true,
 };

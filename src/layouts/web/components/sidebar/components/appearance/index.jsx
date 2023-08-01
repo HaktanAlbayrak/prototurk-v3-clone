@@ -5,14 +5,14 @@ import useColorScheme from '~/hooks/use-color-scheme';
 import { setTheme } from '~/stores/app/actions';
 import { useTheme } from '~/stores/app/hooks';
 import {
-  apperance,
-  getApperanceIcon,
-  getApperanceName,
+  appearance,
+  getAppearanceIcon,
+  getAppearanceName,
   getLanguageName,
   languages,
-} from '~/utils/consts/apperance';
+} from '~/utils/consts/appearance';
 
-export default function Apperance() {
+export default function Appearance() {
   const theme = useTheme();
   const { colorScheme } = useColorScheme();
   const { t, i18n } = useTranslation();
@@ -22,12 +22,12 @@ export default function Apperance() {
       <Menu as='nav' className='relative'>
         <Menu.Button className='h-10 w-full text-zinc-600 rounded border border-zinc-300 bg-zinc-50 dark:bg-zinc-800 dark:text-white dark:border-zinc-700 gap-x-2.5 font-medium  flex items-center justify-center text-sm'>
           <span className='text-black dark:text-white'>
-            {getApperanceIcon(theme, colorScheme)}
+            {getAppearanceIcon(theme, colorScheme)}
           </span>
-          {t(getApperanceName(theme))}
+          {t(getAppearanceName(theme))}
         </Menu.Button>
         <Menu.Items className='absolute bottom-full left-0 w-[234px] bg-white border border-zinc-300 rounded overflow-hidden grid -translate-y-1 dark:bg-zinc-800 dark:text-white dark:border-zinc-700'>
-          {apperance.map(({ key, value }, index) => (
+          {appearance.map(({ key, value }, index) => (
             <Menu.Item key={index}>
               {({ active }) => (
                 <button
@@ -50,7 +50,7 @@ export default function Apperance() {
                       'text-blue-800 dark:text-white': key === theme,
                     })}
                   >
-                    {getApperanceIcon(key)}
+                    {getAppearanceIcon(key)}
                   </span>
                   {t(value)}
                 </button>

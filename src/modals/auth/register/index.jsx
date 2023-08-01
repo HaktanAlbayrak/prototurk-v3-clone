@@ -5,6 +5,7 @@ import ModalTitle from '~/components/modal/header';
 import Or from '~/components/or';
 import { modal } from '~/stores/modal/action';
 import { registerSchema } from '~/validations';
+import PropTypes from 'prop-types';
 
 export default function RegisterModal({ destroyAll }) {
   return (
@@ -37,3 +38,7 @@ export default function RegisterModal({ destroyAll }) {
     </div>
   );
 }
+
+RegisterModal.propTypes = {
+  destroyAll: PropTypes.func,
+};

@@ -3,10 +3,12 @@ import Button from '~/components/button';
 import Input from '~/components/input';
 import ModalTitle from '~/components/modal/header';
 import Or from '~/components/or';
+import { setUser } from '~/stores/auth/actions';
 import { modal } from '~/stores/modal/action';
 import { loginSchema } from '~/validations';
+import PropTypes from 'prop-types';
 
-export default function LoginModal() {
+export default function LoginModal({ destroy }) {
   return (
     <>
       <ModalTitle title='Giriş yap' />
@@ -14,7 +16,8 @@ export default function LoginModal() {
         validationSchema={loginSchema}
         initialValues={{ username: '', password: '' }}
         onSubmit={(values) => {
-          console.log('gönderilen değerler', values);
+          setUser(values);
+          destroy();
         }}
       >
         <Form className='grid gap-y-4 p-4'>
@@ -34,3 +37,7 @@ export default function LoginModal() {
     </>
   );
 }
+
+LoginModal.propTypes = {
+  destroy: PropTypes.func,
+};

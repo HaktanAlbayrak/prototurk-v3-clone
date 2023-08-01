@@ -1,11 +1,11 @@
 import PropTypes from 'prop-types';
 import { NavLink } from 'react-router-dom';
 import classNames from 'classnames';
-import { createElement } from 'react';
 
 export default function MenuItem({ item }) {
   return (
     <NavLink
+      end={true}
       to={item.path}
       onClick={(e) => {
         if (item?.onClick) {

@@ -5,18 +5,23 @@ import {
   QA_SIDEBAR_MENU,
   SIDEBAR_MENU,
 } from '~/utils/consts/sidebar';
-import Apperance from './components/apperance';
+import Appearance from './components/appearance';
+import Categories from './components/categories';
 
 export default function Sidebar() {
   const type = useSidebarType();
 
   return (
     <aside className='w-[250px] h-[calc(100vh-3.5rem)] border-r border-zinc-200 fixed top-[3.5rem] p-2 flex flex-col overflow-auto transition-colors dark:border-zinc-700'>
-      {type === 'app' && <SidebarMenu menu={SIDEBAR_MENU} />}
+      {type === 'app' && (
+        <>
+          <SidebarMenu menu={SIDEBAR_MENU} />
+          <Categories />
+        </>
+      )}
       {type === 'qa' && <SidebarMenu menu={QA_SIDEBAR_MENU} />}
       {type === 'profile' && <SidebarMenu menu={PROFILE_SIDEBAR_MENU} />}
-
-      <Apperance />
+      <Appearance />
     </aside>
   );
 }

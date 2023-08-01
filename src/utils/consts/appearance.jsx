@@ -3,7 +3,7 @@ import { FiSun } from 'react-icons/fi';
 import { CgScreen } from 'react-icons/cg';
 import { i18n } from '../language';
 
-export const apperance = [
+export const appearance = [
   {
     key: 'default',
     value: 'apperance.default',
@@ -18,10 +18,10 @@ export const apperance = [
   },
 ];
 
-export const getApperanceName = (key) =>
-  apperance.find((a) => a.key === key)?.value;
+export const getAppearanceName = (key) =>
+  appearance.find((a) => a.key === key)?.value;
 
-export const getApperanceIcon = (key, colorScheme = false) => {
+export const getAppearanceIcon = (key, colorScheme = false) => {
   switch (key) {
     case 'default':
       if (!colorScheme) {

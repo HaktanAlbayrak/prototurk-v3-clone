@@ -6,6 +6,7 @@ import useColorScheme from '~/hooks/use-color-scheme';
 import { useEffect } from 'react';
 import { useModals } from '~/stores/modal/hooks';
 import Modals from '~/modals';
+import { ScrollRestoration } from 'react-router-dom';
 
 export default function WebLayout() {
   const modals = useModals();
@@ -20,10 +21,9 @@ export default function WebLayout() {
     }
   }, [theme, colorScheme]);
 
-  console.log('modals', modals);
-
   return (
     <>
+      <ScrollRestoration />
       {modals.length > 0 && <Modals />}
       <Header />
       <Sidebar />

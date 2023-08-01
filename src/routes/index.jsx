@@ -1,5 +1,6 @@
 import { createBrowserRouter } from 'react-router-dom';
 import Layout from '~/layouts';
+import AuthLayout from '~/layouts/auth';
 import WebLayout from '~/layouts/web';
 import Articles from '~/pages/articles';
 import ArticleDetail from '~/pages/articles/detail';
@@ -7,6 +8,13 @@ import Category from '~/pages/category';
 import Discover from '~/pages/discover';
 import Home from '~/pages/home';
 import LectureRequests from '~/pages/lecture-requests';
+import Profile from '~/pages/profile';
+import Answers from '~/pages/profile/answers';
+import EditProfile from '~/pages/profile/edit-profile';
+import Followers from '~/pages/profile/followers';
+import Following from '~/pages/profile/following';
+import Notifications from '~/pages/profile/notifications';
+import Questions from '~/pages/profile/questions';
 import QADashboard from '~/pages/qa';
 import Categories from '~/pages/qa/categories';
 import PopularQuestions from '~/pages/qa/popular-questions';
@@ -73,6 +81,40 @@ const routes = createBrowserRouter([
       {
         path: '/uye/:slug',
         element: <User />,
+      },
+      {
+        path: '/profil',
+        element: (
+          <AuthLayout>
+            <Profile />
+          </AuthLayout>
+        ),
+        children: [
+          {
+            index: true,
+            element: <EditProfile />,
+          },
+          {
+            path: 'takipciler',
+            element: <Followers />,
+          },
+          {
+            path: 'takip-ettiklerin',
+            element: <Following />,
+          },
+          {
+            path: 'sorular',
+            element: <Questions />,
+          },
+          {
+            path: 'cevaplar',
+            element: <Answers />,
+          },
+          {
+            path: 'bildirimler',
+            element: <Notifications />,
+          },
+        ],
       },
       {
         path: '/:categorySlug',
