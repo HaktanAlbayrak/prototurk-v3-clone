@@ -22,8 +22,8 @@ export default function Button({
             variant === 'primary-outline',
           'bg-white text-primary': variant === 'light',
           'bg-zinc-200 text-primary': variant === 'gray',
-          'px-5 h-10 font-medium text-15': size === 'normal',
-          'px-4 h-8 font-medium text-sm': size === 'small',
+          'px-5 h-10 font-medium text-sm md:text-15': size === 'normal',
+          'px-4 h-8 font-medium text-[13px] md:text-sm': size === 'small',
           [className]: !!className,
         }
       ),

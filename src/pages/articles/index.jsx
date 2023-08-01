@@ -7,7 +7,7 @@ export default function Articles() {
   return (
     <div className='max-w-[1200px] mx-auto'>
       <Section title='Makaleler'>
-        <div className='grid grid-cols-2 gap-4 mb-4'>
+        <div className='grid md:grid-cols-2 gap-4 mb-4'>
           {articles.map((article, index) => (
             <ArticleCard style={false} key={index} item={article} />
           ))}

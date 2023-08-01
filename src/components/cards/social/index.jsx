@@ -1,4 +1,3 @@
-import { propTypes } from 'prop-types';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { FaInstagram, FaTelegram, FaTwitter } from 'react-icons/fa';
@@ -20,13 +19,14 @@ function getSocialMediaTitle(type) {
     case 'twitter':
       return (
         <>
-          Twitter'da <b>@prototurkcom</b> hesabını takip etmeyi unutma!
+          Twitter&apos;da <b>@prototurkcom</b> hesabını takip etmeyi unutma!
         </>
       );
     case 'instagram':
       return (
         <>
-          Instagram'da <b>@prototurk.official</b> hesabını takip etmeyi unutma!
+          Instagram&apos;da <b>@prototurk.official</b> hesabını takip etmeyi
+          unutma!
         </>
       );
     case 'telegram':
@@ -54,7 +54,7 @@ export default function SocialCard({
     <section className='border-b border-[#f3f6f9] dark:border-zinc-700 pb-10 mb-10 last:mb-0 last:border-0'>
       <div
         className={classNames(
-          'px-10 py-5 rounded-md mb-10 text-white flex items-center gap-x-7',
+          'px-6 md:px-10 py-5 rounded-md mb-10 text-white flex flex-col md:flex-row md:items-center gap-y-5 gap-x-7',
           {
             'bg-[#1da1f2]': type === 'twitter',
             'bg-gradient-to-l from-[#405de6] via-[#833ab4] to-[#e1306c]':
@@ -67,8 +67,10 @@ export default function SocialCard({
           {getSocialMediaIcon(type)}
         </div>
         <div>
-          <h6 className='text-xl font-medium'>{getSocialMediaTitle(type)}</h6>
-          <p className='text-white/70 mb-3'>
+          <h6 className='text-lg md:text-xl font-medium'>
+            {getSocialMediaTitle(type)}
+          </h6>
+          <p className='text-white/70 text-sm md:text-base mt-2 md:mt-0 mb-3'>
             {getSocialMediaDescription(type)}
           </p>
           <Button as='a' target='_blank' href={callToActionUrl} variant='light'>
