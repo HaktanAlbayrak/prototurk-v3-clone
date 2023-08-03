@@ -1,4 +1,4 @@
-import { useBreakpoint } from '~/hooks/use-breakpint';
+import { useBreakpoint } from '~/hooks/use-breakpoint';
 import Auth from './auth';
 import Logo from './logo';
 import Search from './search';

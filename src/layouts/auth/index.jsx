@@ -13,7 +13,7 @@ export default function AuthLayout({ children }) {
       });
       return null;
     }
-  }, [user]);
+  }, [user, redirect]);
 
   if (user) {
     return children;

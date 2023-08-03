@@ -7,16 +7,17 @@ import {
 } from '~/utils/consts/sidebar';
 import Appearance from './components/appearance';
 import Categories from './components/categories';
-import { useBreakpoint } from '~/hooks/use-breakpint';
+import { useBreakpoint } from '~/hooks/use-breakpoint';
 import classNames from 'classnames';
 import { Suspense } from 'react';
+import OpacityContent from '~/components/animated/opacity';
 
 export default function Sidebar() {
   const { breakpoint } = useBreakpoint();
   const type = useSidebarType();
 
   return (
-    <aside
+    <OpacityContent
       className={classNames(
         'h-[calc(100vh-3.5rem)] fixed top-[3.5rem] p-2 flex flex-col overflow-auto transition-colors',
         {
@@ -38,6 +39,6 @@ export default function Sidebar() {
       <Suspense fallback='..'>
         <Appearance />
       </Suspense>
-    </aside>
+    </OpacityContent>
   );
 }

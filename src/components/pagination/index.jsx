@@ -4,7 +4,7 @@ import {
   MdOutlineKeyboardArrowRight,
 } from 'react-icons/md';
 import PropTypes from 'prop-types';
-import { useBreakpoint } from '~/hooks/use-breakpint';
+import { useBreakpoint } from '~/hooks/use-breakpoint';
 
 export default function Pagination({ count, range }) {
   const { breakpoint } = useBreakpoint();

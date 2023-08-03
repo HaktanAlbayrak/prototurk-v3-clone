@@ -7,10 +7,11 @@ import { useEffect } from 'react';
 import { useModals } from '~/stores/modal/hooks';
 import Modals from '~/modals';
 import { ScrollRestoration } from 'react-router-dom';
-import { useBreakpoint } from '~/hooks/use-breakpint';
+import { useBreakpoint } from '~/hooks/use-breakpoint';
 import classNames from 'classnames';
 import { setSidebarVisibility } from '~/stores/app/actions';
 import { useLocation } from 'react-router-dom';
+import { AnimatePresence } from 'framer-motion';
 
 export default function WebLayout() {
   const location = useLocation();
@@ -57,9 +58,9 @@ export default function WebLayout() {
   return (
     <>
       <ScrollRestoration />
-      {modals.length > 0 && <Modals />}
+      <AnimatePresence>{modals.length > 0 && <Modals />}</AnimatePresence>
       <Header />
-      {sidebarVisibility && <Sidebar />}
+      <AnimatePresence>{sidebarVisibility && <Sidebar />}</AnimatePresence>
       <main
         className={classNames('p-4 md:p-6 mt-14 dark:text-white', {
           'ml-[250px]': breakpoint === 'desktop',

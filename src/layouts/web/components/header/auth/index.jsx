@@ -7,7 +7,7 @@ import { removeUser } from '~/stores/auth/actions';
 import { MdArrowDropDown } from 'react-icons/md';
 import { LuUser } from 'react-icons/lu';
 import classNames from 'classnames';
-import { useBreakpoint } from '~/hooks/use-breakpint';
+import { useBreakpoint } from '~/hooks/use-breakpoint';
 
 function UserMenu() {
   const user = useAuth();

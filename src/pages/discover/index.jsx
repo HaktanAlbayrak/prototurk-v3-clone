@@ -1,3 +1,5 @@
+import OpacityContent from '~/components/animated/opacity';
+
 export default function Discover() {
-  return <div>Discover Page</div>;
+  return <OpacityContent>Discover Page</OpacityContent>;
 }

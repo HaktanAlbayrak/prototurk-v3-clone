@@ -1,6 +1,11 @@
 import { useParams } from 'react-router-dom';
+import OpacityContent from '~/components/animated/opacity';
 
 export default function Category() {
   const { categorySlug } = useParams();
-  return <div>Category Page = {categorySlug}</div>;
+  return (
+    <OpacityContent key={categorySlug}>
+      Category Page = {categorySlug}
+    </OpacityContent>
+  );
 }

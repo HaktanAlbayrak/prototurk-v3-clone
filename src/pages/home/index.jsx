@@ -3,10 +3,11 @@ import LastQuestions from './sections/last-questions';
 import Articles from './sections/articles';
 import LastUsers from './sections/last-users';
 import SocialCard from '~/components/cards/social';
+import OpacityContent from '~/components/animated/opacity';
 
 export default function Home() {
   return (
-    <div className='max-w-[1200px] mx-auto'>
+    <OpacityContent className='max-w-[1200px] mx-auto'>
       <Categories />
 
       <SocialCard
@@ -28,6 +29,6 @@ export default function Home() {
         callToActionUrl='https://t.me/prototurk'
         callToActionText='Gruba Katıl'
       />
-    </div>
+    </OpacityContent>
   );
 }

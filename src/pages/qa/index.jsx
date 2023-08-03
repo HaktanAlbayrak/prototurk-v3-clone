@@ -1,4 +1,5 @@
 import { useEffect } from 'react';
+import OpacityContent from '~/components/animated/opacity';
 import { setSidebarType } from '~/stores/app/actions';
 
 export default function QADashboard() {
@@ -10,8 +11,8 @@ export default function QADashboard() {
   }, []);
 
   return (
-    <div>
+    <OpacityContent>
       <h1>QADashboard</h1>
-    </div>
+    </OpacityContent>
   );
 }

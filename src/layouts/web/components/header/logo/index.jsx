@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { useBreakpoint } from '~/hooks/use-breakpint';
+import { useBreakpoint } from '~/hooks/use-breakpoint';
 
 export default function Logo() {
   const { breakpoint } = useBreakpoint();
